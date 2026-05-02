@@ -88,17 +88,6 @@ OpenDyslexic/             # Generated Xcode project (created by setup.sh)
 
 ---
 
-## Sharing with a Friend
-
-The easiest way is to have them follow the same steps above — they just need Xcode and a free Apple ID. The whole process takes about 10 minutes.
-
-Alternatively, you can share your built `OpenDyslexic.app` directly (find it via **Product → Show Build Folder in Finder** in Xcode). They'll need to run the following to bypass macOS Gatekeeper since the app isn't notarized:
-```bash
-xattr -dr com.apple.quarantine /path/to/OpenDyslexic.app
-```
-
----
-
 ## Credits
 
 - [OpenDyslexic](https://github.com/antijingoist/opendyslexic) font by Abbie Gonzalez — free and open source
