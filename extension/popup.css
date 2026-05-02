@@ -1,0 +1,110 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 280px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #1c1c1e;
+}
+
+@media (prefers-color-scheme: dark) {
+  body        { background: #1c1c1e; color: #f2f2f7; }
+  .header     { border-bottom-color: #3a3a3c; }
+  .divider    { background: #3a3a3c; }
+  .label      { color: #636366; }
+  .sub        { color: #636366; }
+  .dl-btn     { background: #2c2c2e; color: #c39ef0; }
+  .dl-btn:hover { background: #3a3a3c; }
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.logo  { width: 28px; height: 28px; border-radius: 6px; }
+.title { font-size: 15px; font-weight: 600; }
+
+/* ── Site row ── */
+.site-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8e8e93;
+  margin-bottom: 3px;
+}
+
+.hostname {
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Toggle switch ── */
+.switch          { position: relative; width: 44px; height: 26px; flex-shrink: 0; }
+.switch input    { display: none; }
+
+.knob {
+  position: absolute;
+  inset: 0;
+  background: #e5e5ea;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.knob::before {
+  content: '';
+  position: absolute;
+  width: 22px; height: 22px;
+  left: 2px; top: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  transition: transform .2s;
+}
+
+.switch input:checked + .knob              { background: #4a147c; }
+.switch input:checked + .knob::before     { transform: translateX(18px); }
+.switch input:disabled + .knob            { opacity: .4; cursor: default; }
+
+/* ── Divider ── */
+.divider { height: 1px; background: #e5e5ea; margin: 0 16px; }
+
+/* ── Download row ── */
+.download-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 14px;
+}
+
+.sub { font-size: 12px; color: #8e8e93; margin-top: 2px; }
+
+.dl-btn {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #4a147c;
+  background: #f2eef8;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.dl-btn:hover { background: #e5daf5; }
